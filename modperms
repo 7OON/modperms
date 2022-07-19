@@ -1,0 +1,72 @@
+STAR = {
+    [2720024088] = true; -- gal
+    [1931418203] = true; -- Brandon
+    [523907152] = true; -- EL
+    [2506216522] = true; -- Gal Alt
+    [644443235] = true; -- Carla
+    [2742753665] = true; -- Evan
+    [405279859] = true; -- Trap
+    [1378099297] = true; -- tics
+    [2289036238] = true; -- sins
+    [1566416338] = true; -- Johnny dang
+    [3122064399] = true; -- Ria
+    [3399375289] = true; -- random account
+    [3621536715] = true; -- VV9
+}
+
+LEGEND = {
+    [227455787] = true; -- alt
+}
+
+MOBILE = {
+    [1173829361] = true; -- don
+}
+
+MODS = {
+    [1893359617] = true; -- nate
+    [502045969] = true; -- Sora
+    [3561273404] = true; -- zzz alt
+    [3638345258] = true; -- zzz 2nd alt
+    [2281739186] = true; -- zzz 3rd alt
+    [2308854045] = true; -- zzz 4th alt
+    [516305163] = true; -- mark acc
+    [1632943347] = true; -- Jayven
+    [1718957419] = true; -- Viviana
+    [208691629] = true; -- idk
+}
+
+OWNER = {
+    [0] = true; -- vengeance
+    [283222776] = true; -- crown emoji
+    [448679712] = true; -- Endxgv
+}
+
+--// Don't mess with anything below this
+function initiateNames()
+    game.Players.LocalPlayer.Character.UpperTorso:FindFirstChild('OriginalSize'):Destroy()
+    for _,v in pairs(game:GetService('Players'):GetPlayers()) do
+        if v.Character then
+            if not v.Character.UpperTorso:FindFirstChild('OriginalSize') then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if STAR[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if LEGEND[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🌟] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if MOBILE[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[📱⭐] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if MODS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[☑️] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if OWNER[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+        end
+    end
+end
+
+local successful, errored = pcall(initiateNames)
+return MODS
