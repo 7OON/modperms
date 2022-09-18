@@ -1,10 +1,10 @@
 MODS = {
-    [248483110] = true; -- dimag 
+    [248483110] = true; -- Vengeance 
     [269359071] = true; --
 }
 
 ADMIN = {
-    [3100746109] = true; -- dimag
+    [448679712] = true; -- dimag
     
 }
 
